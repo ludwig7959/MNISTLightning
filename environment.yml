@@ -1,0 +1,12 @@
+name: mnist-lightning
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pytorch=2.5.1
+  - torchvision=0.20.1
+  - lightning=2.5.0.post0
+  - torchmetrics=1.6.1
+  - hydra-core=1.4.0.dev1
+  - tensorboardx=2.6.2.2

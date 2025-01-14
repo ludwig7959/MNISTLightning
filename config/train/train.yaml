@@ -1,0 +1,33 @@
+# 훈련 정확도 설정
+precision: 32
+# 훈련 배치 크기
+batch_size: 16
+# 훈련 에폭 수
+max_epochs: 30
+num_workers: 4
+# 가속기 설정
+accelerator:
+  enabled: true
+  type: "mps"
+  devices: "auto"
+val_check_interval: 0.25
+validation:
+  enabled: true
+  batch_size: 32
+  num_workers: 4
+callbacks:
+  - _target_: lightning.pytorch.callbacks.EarlyStopping
+    monitor: "val_loss"
+    mode: "min"
+    patience: 5
+    verbose: true
+  - _target_: lightning.pytorch.callbacks.ModelCheckpoint
+    monitor: "val_loss"
+    mode: "min"
+    every_n_epochs: 1
+    save_top_k: 1
+    save_last: false
+    save_weights_only: true
+    dirpath: "./checkpoints"
+    filename: "{epoch}-{val_loss:.2f}"
+

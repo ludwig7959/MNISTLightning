@@ -1,0 +1,9 @@
+defaults:
+  - _self_
+  - model: simplecnn
+  - train: train
+
+# 랜덤 시드 설정
+seed:
+  enabled: true
+  value: 42

@@ -1,0 +1,8 @@
+# 모델 설정
+_target_: models.simplecnn.SimpleCNNForMNIST
+
+# 옵티마이저 설정
+optimizer:
+  _target_: torch.optim.Adam
+  lr: 0.0001
+  weight_decay: 0.0001
