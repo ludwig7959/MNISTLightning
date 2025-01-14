@@ -3,10 +3,8 @@ import argparse
 
 import hydra
 from lightning import Trainer, seed_everything
-from lightning.pytorch.callbacks import EarlyStopping, ModelCheckpoint
 from lightning.pytorch.loggers import TensorBoardLogger
 from datasets import MNISTDataModule
-from models import SimpleCNNForMNIST
 
 @hydra.main(config_path="config", config_name="config", version_base="1.3")
 def train(cfg):
